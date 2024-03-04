@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">calculadoraimc</string>
+    <string name="preencha_todos_os_cantos">Preencha todos os cantos</string>
 </resources>
