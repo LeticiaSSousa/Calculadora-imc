@@ -7,7 +7,8 @@ import android.os.Parcelable
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 
-const val KEY_RESULT_IMC ="ResultActivity.KEY_IMC"
+const val KEY_RESULT_IMC = "ResultActivity.KEY_IMC"
+
 class ResultActivity() : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,9 +16,6 @@ class ResultActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_result)
 
         val result = intent.getFloatExtra(KEY_RESULT_IMC, 0f)
-
-        // Recuperar os daDos
-        //mostrar na tela
 
         val tvResult = findViewById<TextView>(R.id.tv_result)
         val tvClassificacao = findViewById<TextView>(R.id.tv_classificacao)
@@ -31,7 +29,8 @@ class ResultActivity() : AppCompatActivity() {
             "SOBREPESO"
         } else if (result >= 30f && result <= 39.9) {
             "OBESIDADE"
-        } else { (result >=40.0f)
+        } else {
+            (result >= 40.0f)
             "OBESIDADE GRAVE"
         }
 

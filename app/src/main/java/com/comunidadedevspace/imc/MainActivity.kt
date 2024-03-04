@@ -10,11 +10,7 @@ import com.google.android.material.textfield.TextInputEditText
 class MainActivity : AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         setContentView(R.layout.activity_main)
-
-        //Recuperar os componentes EditText
-            //Criar uma variavel e associar o componentes de UI<EditText>
-        //Recuperar o botão da tela
+        setContentView(R.layout.activity_main)
 
         val edtPeso = findViewById<TextInputEditText>(R.id.edt_peso)
         val edtAltura = findViewById<TextInputEditText>(R.id.edt_altura)
@@ -25,8 +21,7 @@ class MainActivity : AppCompatActivity() {
             val pesoStr: String = edtPeso.text.toString()
             val alturaStr: String = edtAltura.text.toString()
 
-            if(pesoStr == "" || alturaStr == ""){
-                // Mostrar mensagem para o usuario
+            if (pesoStr == "" || alturaStr == "") {
 
                 Snackbar
                     .make(
@@ -41,18 +36,13 @@ class MainActivity : AppCompatActivity() {
                 val altura = alturaStr.toFloat()
 
                 val alturaQ2 = altura * altura
-                val resultado = peso/ alturaQ2
+                val resultado = peso / alturaQ2
 
-                // Navegar para proxima tela
-                // Criar o layout da proxima tela
-                // Passar dados(res para a proxia tela
-
-                val intent = Intent (this, ResultActivity::class.java)
+                val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(KEY_RESULT_IMC, resultado)
                 startActivity(intent)
 
-                println("Seu imc e"+ resultado)
-
+                println("Seu imc e" + resultado)
 
 
             }
